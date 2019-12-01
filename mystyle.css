@@ -214,7 +214,7 @@ video
 {
 	height: 350px;
 	width: 550px;
-	margin-top: -10%;
+	margin-top: 10%;
 	animation: shake 5s;
   animation-iteration-count: infinite;
 	animation-delay: -2s;
@@ -224,7 +224,7 @@ video
 {
 	height: 350px;
 	width: 550px;
-	margin-top: -18%;
+	margin-top: 18%;
 	animation: shake 5s;
   animation-iteration-count: infinite;
 	animation-delay: -4s;
@@ -233,7 +233,7 @@ video
 {
 	height: 350px;
 	width: 550px;
-	margin-top: 1%;
+	margin-top: 10%;
 	animation: shake 5s;
   animation-iteration-count: infinite;
 	animation-delay: -6s;
