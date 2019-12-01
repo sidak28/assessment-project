@@ -8,22 +8,17 @@
                <title>Weather</title>
 
           <style media="screen">
-
             table, th, td {
-
                 border: 3px solid yellow ;
   border-collapse: collapse;
   font-size: 30px;
   padding: 20px;
-
   }
-
 h1
 {
   font-family: fantasy;
   font-size: 60px;
 }
-
    </style>
 
  </head>
@@ -50,6 +45,8 @@ h1
 
 <th>Ground Level</th>
 
+<th>Wind Speed</th>
+
  </tr>
 
 <tr>
@@ -67,6 +64,7 @@ h1
 
 <td align="center" id="td5"></td>
 
+<td align="center" id="td6"></td>
 
 </tr>
 
@@ -78,68 +76,38 @@ h1
  </div>
 
  <script>
-
   //Template Literals
-
  var name ='http://api.openweathermap.org/data/2.5/weather?q=';
-
      var name2 ='&units=metric&appid=1285bbb78a338ad8c43733bba194610a';
-
   var name3=prompt("Enter City Name");
-
 var name1=`${name3}`
-
  var url = name+name1+name2;
-
-
-
  var xhr = new XMLHttpRequest()
 // there is establish connection bw serber and client
-
-
  xhr.open('GET',url)
-
 xhr.onreadystatechange = test
-
   function test(){
-
 if(this.status==200 && this.readyState==4)
 { //to remove exception
-
   var re_data = JSON.parse(this.responseText)
-
 console.log(re_data)
-
  var a= document.getElementById('td0')
-
      a.innerHTML=JSON.stringify(re_data.name)
-
   var e = document.getElementById('td1')
-
    e.innerHTML=JSON.stringify(re_data.main.temp);
-
 var b=document.getElementById('td2')
-
  b.innerHTML=JSON.stringify(re_data.weather[0].description)
-
  var pre=document.getElementById('td3')
-
  pre.innerHTML=JSON.stringify(re_data.main.pressure)
-
  var c=document.getElementById('td4')
-
  c.innerHTML=JSON.stringify(re_data.main.humidity)
-
  var d = document.getElementById('td5')
-
  d.innerHTML=JSON.stringify(re_data.main.grnd_level)
-
+ var e = document.getElementById('td6')
+ e.innerHTML=JSON.stringify(re_data.wind.speed)
  }
-
 }
-
  xhr.send()
-
 </script>
 
  </body>
